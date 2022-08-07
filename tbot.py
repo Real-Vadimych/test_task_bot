@@ -44,7 +44,7 @@ async def start(message: types.Message):
 
 @dp.message_handler(commands='whatsmineismine')
 async def start(message: types.Message):
-    await message.reply('Here is the link to GitHub repo: W.I.P.')
+    await message.reply('Here is the link to GitHub repo: https://github.com/Real-Vadimych/test_task_bot')
 
 if __name__ == '__main__':
     executor.start_polling(dp)
