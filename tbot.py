@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 token = os.getenv("TELEGRAM_TOKEN")
+github_link = os.getenv("GITHUB_LINK")
+report_link = os.getenv("REPORT_LINK")
 bot = Bot(token=token)
 dp = Dispatcher(bot)
 
@@ -39,12 +41,12 @@ async def fa(message: types.Message):
 
 @dp.message_handler(commands='showmethemoney')
 async def start(message: types.Message):
-    await message.reply('Here is the link to report: https://datalens.yandex/onbptig6iahef')
+    await message.reply(f'Here is the link to report: {report_link}')
 
 
 @dp.message_handler(commands='whatsmineismine')
 async def start(message: types.Message):
-    await message.reply('Here is the link to GitHub repo: https://github.com/Real-Vadimych/test_task_bot')
+    await message.reply(f'Here is the link to GitHub repo: {github_link}')
 
 if __name__ == '__main__':
     executor.start_polling(dp)
